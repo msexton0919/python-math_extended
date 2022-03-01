@@ -5,6 +5,8 @@ from functools import reduce
 # Function used to validate the input of other functions.
 # Specifcally, checks to see if the input is less than some other integer. If so, raises an exception.
 def validation(num, less_than=1):
+    if not isinstance(num, int):
+        raise ValueError("Input must be an integer.")
     if num < less_than:
         raise ValueError(f'Argument must be greater than or equal to {less_than}')
 
