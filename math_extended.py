@@ -89,31 +89,6 @@ def number_of_factors(num):
     num_factors *= total
     return num_factors
 
-# Returns the gcd, (greatest common divisor), of a variable length list of integers.
-# Example: gcd(2, 3, 5, 7, 12, 15) = 1
-def gcd(*args):
-    validation(len(args), 2)
-
-    #Helper function that returns the gcd of 2 integers.
-    def gcd_help(num1, num2):
-        while num2 != 0:
-            num1, num2 = num2, num1 % num2
-        return max(-num1, num1)
-
-    return reduce(gcd_help, args)
-
-
-# Returns the lcm, (least common multiple), of a variable length list of integers.
-#Example: lcm(2, 3, 5, 7) = 210
-def lcm(*args):
-
-    # Helper function that returns the lcm of two integers.
-    def lcm_help(num1, num2):
-        gcd_val = gcd(num1, num2)
-        return 0 if gcd_val == 0 else num1 * num2 // gcd_val
-
-    return reduce(lcm_help, args)
-
 
 # Returns the sum of the divisors of an integer, optionally can raise the divisors to some power then sum them.
 # Example: sum_of_divisors(10) = 18, (1 + 2 + 5 + 10 = 18)
